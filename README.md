@@ -16,6 +16,10 @@ And ssh to the container with:
 ```
 ssh root@<IPADDRESS>
 ```
+`<IPADDRESS>` is the containers's ip address. You can get it with:
+``` 
+ docker inspect --format '{{ .NetworkSettings.IPAddress }}' <CONTAINER_ID>
+```
 Default password is `toor`. You may want to change it.
 Within the container, you are in a standard Ubuntu image with few packets already installed.
 
