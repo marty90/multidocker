@@ -1,4 +1,4 @@
-# multidocker
+# MultiDocker
 This container creates a system where each new user is forced to login an independent docker container.
 The obtained scenario is similar to setup where each user is provided a virtual machine, but it is implemented with docker.
 Under the hood it leverages the key ideas of [docker-in-docker](https://github.com/jpetazzo/dind) and [dockersh](https://github.com/Yelp/dockersh).
