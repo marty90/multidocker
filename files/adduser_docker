@@ -1,0 +1,6 @@
+#!/bin/bash
+
+adduser $1
+gpasswd -a $1 docker
+chsh $1 -s /opt/docker_shell.sh
+
