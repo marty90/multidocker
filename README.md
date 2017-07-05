@@ -1,6 +1,6 @@
 # MultiDocker
 This container creates a system where each new user is forced to login an independent docker container.
-The obtained scenario is similar to setup where each user is provided a virtual machine, but it is implemented with docker.
+The obtained scenario is similar to setup where each user is provided a **virtual machine**, but it is implemented with **docker**.
 Under the hood it leverages the key ideas of [docker-in-docker](https://github.com/jpetazzo/dind) and [dockersh](https://github.com/Yelp/dockersh).
 
 **Warning**:
@@ -37,9 +37,9 @@ To login as user in the system, ssh to the container:
 ```
 ssh <USERNAME>@<IPADDRESS>
 ```
-The user is prompted in a docker container. The base image is `ubuntu`.
+The user is prompted in **its own** docker container. The base image is `ubuntu`.
 This is an independent container, where the user can play and install whatever she wants.
 The user has almost the same freedom as in a virtual machine (few limitations are imposed by docker).
 You may want to add your ssh public key in `~/.ssh/authorized_keys` to autologin in the shell.
 
-You can logout from the shell, and then login again; the container is **presistent**!
+You can logout from the shell, and then login again; the container is **persistent**!
