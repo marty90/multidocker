@@ -23,6 +23,8 @@ ssh root@<IPADDRESS>
 Default password is `toor`. You may want to change it.
 Within the container, you are in a standard Ubuntu image with few packets already installed.
 
+You may want to `run` the container with the `-p [external_port]:22` to make the docker reachable from outside your machine via ssh on the port `[external_port]`.
+
 # 2. Add users
 To add a user in the system, ssh as root to the container (see previous point), and type:
 ```
