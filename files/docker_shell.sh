@@ -1,6 +1,6 @@
 #!/bin/bash
 
-DOCKER_CONTAINER=ubuntu:precise
+DOCKER_CONTAINER=ubuntu:latest
 
 DESIRED_USER=$(whoami)
 DOCKER_NAME="${DESIRED_USER}_shell"
