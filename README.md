@@ -1,6 +1,9 @@
 # MultiDocker
-This container creates a system where each new user is forced to login an independent docker container.
-The obtained scenario is similar to setup where each user is provided a **virtual machine**, but it is implemented with **docker**.
+This container creates a system where each new user is forced to login into an independent docker container.
+The obtained scenario is similar to a setup where each user is provided a **virtual machine**, but it is implemented with **docker**.
+
+Each user has `root` access within her container and **cannot** access the physical machine nor other users' containers. Thus, this tool is useful to share a machine across different users that need to be root, but need to be isolated eachothers. Compared to per-user virtual machines, `multidocker` has few limitations: (i) users cannot interact with the kernel, (ii) users cannot create other users (only admin can). 
+
 Under the hood it leverages the key ideas of [docker-in-docker](https://github.com/jpetazzo/dind) and [dockersh](https://github.com/Yelp/dockersh).
 
 **Warning**:
