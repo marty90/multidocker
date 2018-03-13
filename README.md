@@ -1,3 +1,6 @@
+[![](https://dockerbuildbadges.quelltext.eu/status.svg?organization=martino90&repository=multidocker
+)](https://hub.docker.com/r/martino90/multidocker/builds/)  
+
 # MultiDocker
 This container creates a system where each new user is forced to login into an independent docker container.
 The obtained scenario is similar to a setup where each user is provided a **virtual machine**, but it is implemented with **docker**.
