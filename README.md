@@ -29,7 +29,9 @@ ssh root@<IPADDRESS>
 Default password is `toor`. You may want to change it.
 Within the container, you are in a standard Ubuntu image with few packets already installed.
 
-You may want to `run` the container with the `-p [external_port]:22` to make the docker reachable from outside your machine via ssh on the port `[external_port]`.
+**Note 1:** You may want to `run` the container with the `-p [external_port]:22` to make the docker reachable from outside your machine via ssh on the port `[external_port]`.
+
+**Note 2:** If you want to persist the home directory of users on you host machine, you can `run` the container with the `-v <local_dir>:/home` parameter. In this way, all the home dirs of users are saved in `<local_dir>`, and, if you kill and run again `multidocker`, the users will find their files in their home directory.
 
 ## 2. Add users
 To add a user in the system, ssh as root to the container (see previous point), and type:
