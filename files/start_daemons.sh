@@ -1,7 +1,7 @@
 #!/bin/bash
 
 service ssh start
-service docker start
+nohup dockerd &
 
 while /bin/true; do
   sleep 60
