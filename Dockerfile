@@ -16,7 +16,7 @@ RUN add-apt-repository \
     stable"
 RUN apt-get update
 RUN apt-get -y install docker-ce
-RUN service docker start
+#RUN service docker start
 
 # Install ssh server
 RUN apt-get -y install openssh-server
