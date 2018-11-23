@@ -24,7 +24,7 @@ ssh root@<IPADDRESS>
 ```
 `<IPADDRESS>` is the containers's ip address. You can get it with:
 ``` 
- docker inspect --format '{{ .NetworkSettings.IPAddress }}' <CONTAINER_ID>
+ docker inspect --format '{{ .NetworkSettings.IPAddress }}' multidocker
 ```
 Default password is `toor`. You may want to change it.
 Within the container, you are in a standard Ubuntu image with few packets already installed.
