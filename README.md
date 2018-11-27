@@ -63,14 +63,10 @@ If the container stops for any reason (the host machine restarted, docker daemon
 ```
 docker start multidocker
 ```
-If this does not solve, ssh to the as root to multidocker with
+If this does not solve, the docker and ssh deamons might be down. Restart them with:
 ```
-ssh -p <external_port> root@<IPADDRESS>
+docker exec -d multidocker /opt/start_daemons.sh
 ```
-and then, run:
-```
-/opt/start_daemons.sh
-```
-Finally detach (typing `CTRL+P` and `CTRL+Q` in sequence), and everything should work fine.
+
 
 
