@@ -38,6 +38,10 @@ To add a user in the system, ssh as root to the container (see previous point), 
 ```
 adduser_docker <USERNAME>
 ```
+Alternatively you can run on the host:
+```
+docker exec -i multidocker adduser_docker <USERNAME>
+```
 This will create a new user. You have to specify the user's password.
 You can manipulate the created user with normal bash tool (e.g., `deluser`).
 `adduser_docker` is a simple macro that creates a user, and does some magic to force it to login in an independent container.
@@ -67,6 +71,6 @@ and then, run:
 ```
 /opt/start_daemons.sh
 ```
-Finally detach, and everything should work fine.
+Finally detach (typing `CTRL+P` and `CTRL+Q` in sequence), and everything should work fine.
 
 

@@ -10,17 +10,16 @@ DESIRED_GID=$(id -g $DESIRED_USER)
 HOMEDIR=$(eval echo ~$DESIRED_USER)
 MYHOSTNAME="$(hostname --fqdn)-${DESIRED_USER}-docker"
 
-# USE THIS TO RESUME NEW CONTAINERS
+# Create container if does not exist
 id=$(docker ps -aq --no-trunc --filter name=^/${DOCKER_NAME}$)
 if [ -z "$id" ]; then
     # New docker
-    docker run -t -i --hostname="$MYHOSTNAME" -v $HOMEDIR:$HOMEDIR:rw --name="$DOCKER_NAME"  "$DOCKER_CONTAINER"
-else
-    # Resume old
-    docker start "$DOCKER_NAME"
-    docker attach "$DOCKER_NAME"
+    docker run -d --hostname="$MYHOSTNAME" -v $HOMEDIR:$HOMEDIR:rw --name="$DOCKER_NAME" \
+                  "$DOCKER_CONTAINER" bash -c 'while true; do sleep 60 ; done'
 fi
 
-# USE THIS TO HAVE NEW CONTAINERS AT EACH LOGIN
-#docker rm -f "$DOCKER_NAME" >/dev/null 2>&1 # May not be running, just throw away the output
-#docker run --rm -t -i --hostname="$MYHOSTNAME" -v $HOMEDIR:$HOMEDIR:rw --name="$DOCKER_NAME"  "$DOCKER_CONTAINER"
+# Start the container (no matter if already running)
+docker start "$DOCKER_NAME"
+
+# Exec a shell in it
+docker exec -it "$DOCKER_NAME" bash
